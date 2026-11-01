@@ -4,6 +4,11 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Rootdir
+PRODUCT_PACKAGES += \
+    fstab.mt6895 \
+    fstab.mt6895.vendor_ramdisk
+
 # Set permissive for bringup
 PRODUCT_PACKAGES += \
     set_permissive.rc \
