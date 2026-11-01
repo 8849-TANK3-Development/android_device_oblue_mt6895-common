@@ -65,5 +65,9 @@ BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 # Set permissive for bringup
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/set_permissive/sepolicy
 
+# Verified Boot
+BOARD_AVB_ENABLE := true
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
+
 # Inherit the proprietary files
 include vendor/oblue/mt6895-common/BoardConfigVendor.mk
