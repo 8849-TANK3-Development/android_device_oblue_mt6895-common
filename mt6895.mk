@@ -4,6 +4,11 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Set permissive for bringup
+PRODUCT_PACKAGES += \
+    set_permissive.rc \
+    set_permissive.sh
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)

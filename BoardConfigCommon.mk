@@ -58,5 +58,8 @@ BOARD_HAS_MTK_HARDWARE := true
 # Recovery
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 
+# Set permissive for bringup
+BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/set_permissive/sepolicy
+
 # Inherit the proprietary files
 include vendor/oblue/mt6895-common/BoardConfigVendor.mk

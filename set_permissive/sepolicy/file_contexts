@@ -1,0 +1,2 @@
+# Set permissive
+/vendor/bin/set_permissive.sh                     u:object_r:set_permissive_exec:s0

@@ -1,0 +1,18 @@
+//
+// Copyright (C) 2026 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+sh_binary {
+    name: "set_permissive.sh",
+    src: "bin/set_permissive.sh",
+    vendor: true
+}
+
+prebuilt_etc {
+    name: "set_permissive.rc",
+    src: "etc/set_permissive.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
