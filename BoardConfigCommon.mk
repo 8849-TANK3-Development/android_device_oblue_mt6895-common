@@ -71,6 +71,9 @@ BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 
+# HIDL
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
+
 # Kernel
 TARGET_NO_KERNEL_OVERRIDE := true
 
