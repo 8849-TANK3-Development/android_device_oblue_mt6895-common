@@ -39,6 +39,7 @@ PRODUCT_BUILD_SUPER_PARTITION := false
 
 # Rootdir
 PRODUCT_PACKAGES += \
+    fstab.enableswap \
     fstab.mt6895 \
     fstab.mt6895.vendor_ramdisk \
     init.recovery.mt6895.rc
