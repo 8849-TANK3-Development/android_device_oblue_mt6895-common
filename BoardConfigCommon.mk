@@ -75,6 +75,7 @@ TARGET_NO_BOOTLOADER := true
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
 
 # Kernel
+TARGET_KERNEL_SOURCE := kernel/oblue/mt6895
 TARGET_NO_KERNEL_OVERRIDE := true
 
 # Partitions
