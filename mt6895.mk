@@ -37,12 +37,26 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_BUILD_SUPER_PARTITION := false
 
+# Modules
+PRODUCT_PACKAGES += \
+    init.insmod.sh \
+    init.insmod.mt6895.cfg
+
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.enableswap \
     fstab.mt6895 \
     fstab.mt6895.vendor_ramdisk \
-    init.recovery.mt6895.rc
+    init.cgroup.rc \
+    init.connectivity.rc \
+    init.modem.rc \
+    init.mt6895.rc \
+    init.mt6895.usb.rc \
+    init.mtkgki.rc \
+    init.project.rc \
+    init.sensor_2_0.rc \
+    init.recovery.mt6895.rc \
+    ueventd.mt6895.rc
 
 # Set permissive for bringup
 PRODUCT_PACKAGES += \
