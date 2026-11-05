@@ -24,19 +24,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 
-# Boot Control
+# Boot control HAL
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.2-mtkimpl \
-    android.hardware.boot@1.2-mtkimpl.recovery \
-    android.hardware.boot@1.2-service
-
-PRODUCT_PACKAGES_DEBUG += \
-    bootctl
-
-# Create Preloader updates
-PRODUCT_PACKAGES += \
-    create_pl_dev \
-    create_pl_dev.recovery
+    bootctrl.default \
+    android.hardware.boot@1.2-impl \
+    android.hardware.boot@1.2-service \
+    android.hardware.boot@1.2-impl.recovery \
+    android.hardware.boot@1.2.recovery
 
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -46,6 +40,13 @@ PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_PACKAGES += \
     init.insmod.sh \
     init.insmod.mt6895.cfg
+
+# MTK plpath utils
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/mtk_plpath_utils/mtk_plpath_utils-system:$(TARGET_COPY_OUT_SYSTEM)/bin/mtk_plpath_utils \
+    $(LOCAL_PATH)/mtk_plpath_utils/mtk-plpath-utils.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/mtk-plpath-utils.rc \
+    $(LOCAL_PATH)/mtk_plpath_utils/mtk_plpath_utils-recovery:recovery/root/system/bin/mtk_plpath_utils \
+    $(LOCAL_PATH)/mtk_plpath_utils/mtk-plpath-utils.rc:recovery/root/system/etc/init/mtk-plpath-utils.rc
 
 # Rootdir
 PRODUCT_PACKAGES += \
@@ -70,8 +71,7 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH) \
-    hardware/mediatek
+    $(LOCAL_PATH)
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/oblue/mt6895-common/mt6895-common-vendor.mk)
