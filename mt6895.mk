@@ -48,6 +48,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/mtk_plpath_utils/mtk_plpath_utils-recovery:recovery/root/system/bin/mtk_plpath_utils \
     $(LOCAL_PATH)/mtk_plpath_utils/mtk-plpath-utils.rc:recovery/root/system/etc/init/mtk-plpath-utils.rc
 
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay
+PRODUCT_ENFORCE_RRO_TARGETS := *
+
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.enableswap \
