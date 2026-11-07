@@ -47,6 +47,11 @@ PRODUCT_PACKAGES += \
     init.insmod.sh \
     init.insmod.mt6895.cfg
 
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay
+PRODUCT_ENFORCE_RRO_TARGETS := *
+
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.enableswap \
