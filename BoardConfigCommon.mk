@@ -76,6 +76,13 @@ DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/oblue/mt6895
+TARGET_KERNEL_ARCH := arm64
+
+# arch/arm64/boot/dts/oblue/mediatek/Makefile gates mt6895.dtb on
+# CONFIG_ARCH_MEDIATEK and tank3.dtbo on MACH_TANK3, so the defconfig used
+# to build those objects has to enable both. tank3_defconfig is gki_defconfig
+# plus those two options.
+TARGET_KERNEL_CONFIG := tank3_defconfig
 TARGET_NO_KERNEL_OVERRIDE := true
 
 # Partitions
